@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FocusFlow | Revoluciona tu Productividad - App de Gestión de Tareas</title>
     <meta name="description" content="FocusFlow te ayuda a planificar tu día, priorizar tareas y mantenerte enfocado. La herramienta todo en uno para maximizar tu productividad.">
-    <meta name="keywords" content="productividad, gestión de tareas, pomodoro, enfoque, organización, aplicación web">
+    <meta name="keywords" content="productividad, gestión de tareas, pomodoro, enfoque, organización, aplicación web, software productividad, app tareas, gestión tiempo">
     <meta name="author" content="FocusFlow Team">
     <meta name="robots" content="index, follow">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://focusflow.example.com">
     
     <!-- Preconexión para mejorar rendimiento -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,17 +34,18 @@
     <!-- Open Graph -->
     <meta property="og:title" content="FocusFlow - Revoluciona tu Productividad">
     <meta property="og:description" content="Planifica, prioriza y enfócate con FocusFlow. Productividad simple y efectiva.">
-    <meta property="og:image" content="assets/og-image.jpg">
+    <meta property="og:image" content="https://focusflow.example.com/assets/og-image.jpg">
     <meta property="og:url" content="https://focusflow.example.com">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="FocusFlow">
+    <meta property="og:locale" content="es_ES">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:creator" content="@focusflow">
     <meta name="twitter:title" content="FocusFlow - Revoluciona tu Productividad">
     <meta name="twitter:description" content="Planifica, prioriza y enfócate con FocusFlow. Productividad simple y efectiva.">
-    <meta name="twitter:image" content="assets/og-image.jpg">
+    <meta name="twitter:image" content="https://focusflow.example.com/assets/og-image.jpg">
     
     <!-- Schema.org markup -->
     <script type="application/ld+json">
@@ -89,11 +93,12 @@
                         <li class="nav__item"><a href="#benefits" class="nav__link">Beneficios</a></li>
                         <li class="nav__item"><a href="#testimonials" class="nav__link">Testimonios</a></li>
                         <li class="nav__item"><a href="#pricing" class="nav__link">Precios</a></li>
+                        <li class="nav__item"><a href="#faq" class="nav__link">FAQ</a></li>
                     </ul>
                 </nav>
 
                 <div class="header__actions">
-                    <a href="#" class="btn btn--outline">Iniciar Sesión</a>
+                    <a href="/login" class="btn btn--outline">Iniciar Sesión</a>
                     <a href="#cta" class="btn btn--primary">Registrarse</a>
                 </div>
             </div>
@@ -112,7 +117,7 @@
                         <p class="hero__description">Organiza tu día con FocusFlow. Planifica, prioriza y ejecuta con claridad. Convierte tus ideas en resultados.</p>
                         <div class="hero__actions">
                             <a href="#cta" class="btn btn--primary btn--large">Comenzar Gratis</a>
-                            <a href="#" class="btn btn--outline btn--large">Ver Demo</a>
+                            <a href="#demo" class="btn btn--outline btn--large" data-video-modal>Ver Demo</a>
                         </div>
                         <ul class="hero__features">
                             <li class="hero__feature">🔒 Privacidad garantizada</li>
@@ -333,6 +338,36 @@
             </div>
         </section>
 
+        <!-- FAQ Section -->
+        <section id="faq" class="faq" aria-labelledby="faq-title">
+            <div class="container">
+                <div class="section__header">
+                    <h2 id="faq-title" class="section__title">Preguntas Frecuentes</h2>
+                    <p class="section__description">Resolvemos tus dudas sobre FocusFlow</p>
+                </div>
+                <div class="faq__content">
+                    <details class="faq__item">
+                        <summary class="faq__question">¿Qué hace diferente a FocusFlow de otras apps de productividad?</summary>
+                        <div class="faq__answer">
+                            <p>FocusFlow combina técnicas probadas como Pomodoro con analíticas avanzadas y un diseño intuitivo que se adapta a tus patrones de trabajo únicos.</p>
+                        </div>
+                    </details>
+                    <details class="faq__item">
+                        <summary class="faq__question">¿Puedo probar FocusFlow antes de comprar?</summary>
+                        <div class="faq__answer">
+                            <p>Sí, ofrecemos una prueba gratuita de 14 días con acceso completo a todas las funciones premium.</p>
+                        </div>
+                    </details>
+                    <details class="faq__item">
+                        <summary class="faq__question">¿Mis datos están seguros con FocusFlow?</summary>
+                        <div class="faq__answer">
+                            <p>Absolutamente. Utilizamos encriptación de grado empresarial y cumplimos con las regulaciones de privacidad de datos.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
         <!-- CTA Section -->
         <section id="cta" class="cta" aria-labelledby="cta-title">
             <div class="container">
@@ -381,32 +416,45 @@
                 <div class="footer__section">
                     <h3 class="footer__title">Empresa</h3>
                     <ul class="footer__links">
-                        <li><a href="#about">Sobre Nosotros</a></li>
-                        <li><a href="#blog">Blog</a></li>
-                        <li><a href="#careers">Carreras</a></li>
-                        <li><a href="#contact">Contacto</a></li>
+                        <li><a href="/about">Sobre Nosotros</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/careers">Carreras</a></li>
+                        <li><a href="/contact">Contacto</a></li>
                     </ul>
                 </div>
                 <div class="footer__section">
                     <h3 class="footer__title">Recursos</h3>
                     <ul class="footer__links">
-                        <li><a href="#help">Centro de Ayuda</a></li>
-                        <li><a href="#docs">Documentación</a></li>
-                        <li><a href="#community">Comunidad</a></li>
-                        <li><a href="#api">API</a></li>
+                        <li><a href="/help">Centro de Ayuda</a></li>
+                        <li><a href="/docs">Documentación</a></li>
+                        <li><a href="/community">Comunidad</a></li>
+                        <li><a href="/api">API</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer__bottom">
                 <p>&copy; 2024 FocusFlow. Todos los derechos reservados.</p>
                 <div class="footer__legal">
-                    <a href="#privacy">Privacidad</a>
-                    <a href="#terms">Términos</a>
-                    <a href="#cookies">Cookies</a>
+                    <a href="/privacy">Privacidad</a>
+                    <a href="/terms">Términos</a>
+                    <a href="/cookies">Cookies</a>
                 </div>
             </div>
         </div>
     </footer>
+
+    <!-- Video Modal (hidden by default) -->
+    <div id="demo-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="demo-modal-title">
+        <div class="modal__content">
+            <button class="modal__close" aria-label="Cerrar modal">×</button>
+            <h2 id="demo-modal-title">Demo de FocusFlow</h2>
+            <div class="modal__video">
+                <div class="video-placeholder">
+                    <p>Video demostrativo de FocusFlow</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script src="script.js" defer></script>
