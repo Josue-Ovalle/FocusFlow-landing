@@ -220,6 +220,7 @@ img {
   border: 0 !important;
 }
 
+/* Skip link corregido: oculto por defecto, visible solo al enfocar */
 .skip-link {
   position: absolute;
   top: -40px;
@@ -231,6 +232,7 @@ img {
   text-decoration: none;
   border-radius: var(--radius);
   font-weight: 600;
+  transition: var(--transition);
 }
 
 .skip-link:focus {
@@ -354,6 +356,7 @@ img {
 
 .section {
   padding: var(--space-3xl) 0;
+  transition: all 0.5s ease;
 }
 
 .section__header {
@@ -682,20 +685,32 @@ img {
   box-shadow: var(--shadow-lg);
 }
 
+/* Iconos mejorados: más claros y con estética premium */
 .feature-card__icon {
-  font-size: 3rem;
+  font-size: 3.5rem;
   margin-bottom: var(--space-md);
   display: inline-block;
   background: linear-gradient(135deg, rgb(var(--color-primary)) 0%, rgb(var(--color-secondary)) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  transition: var(--transition);
 }
 
+.feature-card:hover .feature-card__icon {
+  transform: scale(1.1);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+/* Títulos de características mejorados: color que combina con iconos */
 .feature-card__title {
   font-size: var(--text-xl);
   margin-bottom: var(--space-sm);
-  color: rgb(var(--color-text));
+  background: linear-gradient(135deg, rgb(var(--color-primary)) 0%, rgb(var(--color-secondary)) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-weight: 700;
 }
 
@@ -1196,14 +1211,16 @@ img {
 
 .footer__content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: var(--space-3xl);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-2xl);
   margin-bottom: var(--space-2xl);
 }
 
 .footer__section {
   display: flex;
   flex-direction: column;
+  padding: var(--space-md);
+  gap: var(--space-sm);
 }
 
 .footer__logo {
@@ -1563,11 +1580,6 @@ img {
 }
 
 /* Estilos para modo claro (para secciones específicas) */
-.hero,
-.hero *:not(.hero__badge) {
-  color: rgb(16, 24, 38) !important;
-}
-
 .hero__feature {
   color: rgb(75, 85, 99) !important;
 }
