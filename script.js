@@ -27,7 +27,9 @@ const DOM = {
   emailError: document.getElementById('email-error'),
   animatedElements: document.querySelectorAll('.feature-card, .testimonial, .pricing-card'),
   navigationLinks: document.querySelectorAll('.nav__link'),
-  skipLink: document.querySelector('.skip-link')
+  skipLink: document.querySelector('.skip-link'),
+  videoModal: document.getElementById('demo-modal'),
+  modalClose: document.querySelector('.modal__close')
 };
 
 // === INICIALIZACIÓN DE LA APLICACIÓN ===
@@ -48,6 +50,7 @@ class FocusFlowApp {
     this.initScrollEffects();
     this.initAnimations();
     this.initAccessibility();
+    this.initModal();
     this.initServiceWorker();
     
     console.log('FocusFlow App initialized successfully');
@@ -384,6 +387,50 @@ class FocusFlowApp {
   handleElementInViewport(element) {
     element.classList.add('animate-in');
     this.observer.unobserve(element);
+  }
+
+  // === MODAL ===
+  initModal() {
+    const videoButtons = document.querySelectorAll('[data-video-modal]');
+    
+    if (videoButtons.length && DOM.videoModal && DOM.modalClose) {
+      videoButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+          e.preventDefault();
+          this.openModal();
+        });
+      });
+      
+      DOM.modalClose.addEventListener('click', () => {
+        this.closeModal();
+      });
+      
+      DOM.videoModal.addEventListener('click', (e) => {
+        if (e.target === DOM.videoModal) {
+          this.closeModal();
+        }
+      });
+      
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && DOM.videoModal.getAttribute('aria-hidden') === 'false') {
+          this.closeModal();
+        }
+      });
+    }
+  }
+
+  openModal() {
+    if (DOM.videoModal) {
+      DOM.videoModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  closeModal() {
+    if (DOM.videoModal) {
+      DOM.videoModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
   }
 
   // === ACCESIBILIDAD ===
